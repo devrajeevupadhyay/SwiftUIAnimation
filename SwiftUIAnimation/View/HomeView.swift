@@ -16,12 +16,21 @@ struct HomeView: View {
                 NavigationLink {
                     AnimationDetailView(animationType: item.animationType)
                 } label: {
-                    Text(item.name)
-                        .font(.headline)
-                        .padding(.vertical, 8)
+                    HStack {
+                        Image(systemName: item.icon)
+                            .foregroundColor(.blue)
+                            .frame(width: 30)
+                        Text(item.name)
+                            .font(.headline)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.vertical, 8)
                 }
             }
             .navigationTitle("Animation Demos")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
